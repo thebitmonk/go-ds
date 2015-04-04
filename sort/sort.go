@@ -1,4 +1,4 @@
-package main
+package sort
 
 import (
 	"fmt"
@@ -34,7 +34,7 @@ func siftDown(list []int, start int, end int) {
 	}
 }
 
-func heapsort(list []int) {
+func Heapsort(list []int) {
 	heapify(list)
 	fmt.Println(list)
 	for end := len(list) - 1; end >= 0; {
@@ -42,15 +42,4 @@ func heapsort(list []int) {
 		end--
 		siftDown(list, 0, end)
 	}
-}
-
-func main() {
-	list := make([]int, 10, 10)
-	list = []int{50, 30, 20, 4, 5, 1, 9, 10, 11, 3}
-	heapsort(list)
-	fmt.Println(list)
-
-	list = []int{3, 3333, 33, 33333, 333, 333333333, 33333333, 3333333, 333333, 3333333333}
-	heapsort(list)
-	fmt.Println(list)
 }
